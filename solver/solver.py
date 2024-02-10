@@ -56,7 +56,7 @@ def pathValue(path_str : str, sequenceValues : list[int], sequences : list[str])
             ans += val
     return ans
 
-def solve(sequences, sequenceValues, matrix, buffer) -> None :
+def solve(matrix, buffer, sequences, sequenceValues) :
 
     # Generate all possible paths
     paths = generateAllPaths(matrix, buffer)
@@ -68,11 +68,14 @@ def solve(sequences, sequenceValues, matrix, buffer) -> None :
     # Each path is evaluated. Find the index of the max/best path as well as its value
     for idx,path in enumerate(path_strs) :
         v = pathValue(path, sequenceValues, sequences)
-        if v >= ans :
+        if v > ans :
             ans = v
             ansidx = idx
+        elif v == ans and len(path_strs[idx]) < len(path_strs[ansidx]) :
+            ansidx = idx
     
-    bestpath = path_strs[ansidx]
-    bestpath = " ".join([bestpath[i:i+2] for i in range(0, len(bestpath)-2, 2)])
+    bestpathstr = path_strs[ansidx]
+    bestpathstr = " ".join([bestpathstr[i:i+2] for i in range(0, len(bestpathstr), 2)])
+    bestpath = paths[ansidx]
     
-    return ans,bestpath,paths[ansidx]
+    return ans,bestpathstr,bestpath
