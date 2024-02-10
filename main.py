@@ -7,13 +7,13 @@ def main() :
     # Initialize
     os.system("cls" if os.name == "nt" else "clear")
     matrix, buffersize, seqs, seqvals = [],0,[],[]
-    choice = ui()
 
     # Input
+    choice = ui()
     if choice == 1 :
         matrix, buffersize, seqs, seqvals = cliInput()
         if not matrix :
-            errormsg = seqvals
+            errormsg = seqvals # errormsg is returned through seqvals in cliInput() if an error is raised
             print(f"Error. {errormsg}")
             return
     else :
@@ -27,7 +27,7 @@ def main() :
     # Solve
     os.system("cls" if os.name == "nt" else "clear")
     print("Solving...")
-    print("This may take a while if the buffer size and/or matrix is large...")
+    print("Hang on! This may take a while if the buffer size and/or matrix is large...")
     start = perf_counter()
     ans, pathstr, path = solve(matrix, buffersize, seqs, seqvals)
     end = perf_counter()

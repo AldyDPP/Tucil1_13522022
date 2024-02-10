@@ -36,16 +36,6 @@ def pathToString(matrix, path : list[tuple]) -> list[str] :
 
 """"""
 
-# Optional : LRU Caching for path value computation.
-# Since there are an ungodly amount of paths, many of them might be the exact same when converted to tokens
-# Instead of calculating them again which is O(n*m), n being path.length and m being sequences.length, we can just return the previously computed value for that token string.
-"""
-from functools import lru_cache
-def pathValueHash(*args, **kwargs) :
-    return args[0]
-@lru_cache(hash=pathValueHash)
-"""
-
 # Find the points/value/score/whatever_that_is of a path given an array of sequences and their values
 def pathValue(path_str : str, sequenceValues : list[int], sequences : list[str]) :
     
