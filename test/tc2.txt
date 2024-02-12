@@ -1,0 +1,12 @@
+4
+3 3
+AA AA AA
+AA AA AA
+AA AA AA
+3
+AA AA
+-20
+AA AA AA
+-40
+AA AA AA AA
+-10

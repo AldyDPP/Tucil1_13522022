@@ -1,0 +1,14 @@
+5
+5 5
+aa bb cc dd ee
+aa bb cc dd ee
+aa bb cc dd ee
+aa bb cc dd ee
+aa bb cc dd ee
+3
+aa aa dd dd bb
+50
+aa cc
+20
+bb bb aa aa cc
+40
