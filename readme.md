@@ -4,7 +4,7 @@ Students are tasked with making a simple program that can find the optimal solut
 
 ## How To Run
 
-* Option 1: using Python. No external packages required.
+* Option 1: using Python. No external packages required, make sure to navigate to src folder.
 ```
 python3 main.py
 ```
