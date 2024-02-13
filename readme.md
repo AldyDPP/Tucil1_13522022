@@ -17,7 +17,7 @@ python3 main.py
 ## How To Use
 
 1. In general, the program should give you sufficiently detailed instructions when running.
-2. Regarding file input, the format is listed in every input.txt file (in src and in bin). 
+2. Regarding file input, a copy of input.txt and output.txt has been provided in src and bin for ease of input and output. The input format for .txt can be inferred those files.
 
 ## Authors
 
