@@ -12,8 +12,7 @@ def printSequences(seqs, seqvals) :
 def txtInput(filename : str) :
 
     # init
-    # m_width is not used, hence the underscore
-    buffersize = 0 ; _m_width, m_height = 0, 0 ; seq_length = 0 
+    buffersize = 0 ; m_width, m_height = 0, 0 ; seq_length = 0 
     matrix = [] ; seqs = [] ; seqvals = []
 
     # readfile
@@ -24,7 +23,12 @@ def txtInput(filename : str) :
 
         with open(filename) as f :
             while True :
-                line = f.readline().strip().split()
+                line = f.readline()
+
+                if not line :
+                    raise ValueError
+                else :
+                    line = line.strip().split()
 
                 if not line or line[0][0] == "#" :
                     # line == whitespace or comments
@@ -35,18 +39,25 @@ def txtInput(filename : str) :
                         buffersize = int(line[0])
 
                     elif lineidx == 1 :
-                        _m_width, m_height = tuple(map(int, line))
+                        m_width, m_height = tuple(map(int, line))
 
                     elif lineidx == 2 :
                         matrix.append(line)
                         for _ in range(m_height - 1) :
                             line = f.readline().strip().split()
+                            if len(line) != m_width:
+                                raise ValueError
                             matrix.append(line)
 
                     elif lineidx == 3 :
                         seq_length = int(line[0])
                         while seqidx < seq_length :
-                            line1 = f.readline().strip().split()
+                            line1 = f.readline()
+                            if not line1 :
+                                raise ValueError
+                            else :
+                                line1 = line1.strip().split()
+                            
                             if not line1 or line1[0][0] == "#" :
                                 # line == whitespace or comments
                                 continue
