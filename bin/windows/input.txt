@@ -1,14 +1,16 @@
-5
+6
 5 5
-aa bb cc dd ee
-aa bb cc dd ee
-aa bb cc dd ee
-aa bb cc dd ee
-aa bb cc dd ee
-3
-aa aa dd dd bb
-50
-aa cc
+AA BB AA AA BB
+BB BB BB BB AA
+AA AA AA BB BB
+BB BB AA AA BB
+AA BB AA BB AA
+4
+AA AA AA AA
 20
-bb bb aa aa cc
-40
+BB AA
+20
+AA BB
+30
+BB BB AA
+10

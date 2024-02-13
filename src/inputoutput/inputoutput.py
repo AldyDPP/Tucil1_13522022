@@ -42,11 +42,19 @@ def txtInput(filename : str) :
                         m_width, m_height = tuple(map(int, line))
 
                     elif lineidx == 2 :
+                        if len(line) != m_width:
+                                raise ValueError
+                        for token in line :
+                            if len(token) != 2 :
+                                raise ValueError
                         matrix.append(line)
                         for _ in range(m_height - 1) :
                             line = f.readline().strip().split()
                             if len(line) != m_width:
                                 raise ValueError
+                            for token in line :
+                                if len(token) != 2 :
+                                    raise ValueError
                             matrix.append(line)
 
                     elif lineidx == 3 :
@@ -66,6 +74,9 @@ def txtInput(filename : str) :
                                 seqs.append("".join(line1))
                                 seqvals.append(int(line2[0]))
                                 seqidx += 1
+
+                        if f.readline() :
+                            raise ValueError
                         break
 
                     lineidx += 1
